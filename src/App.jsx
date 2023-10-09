@@ -1,8 +1,14 @@
-import PokemonCard from "./PokemonCard"
+import MyTitle from "./MyTitle"
+import PokemonCard from "./PokemonCard";
 
-function Pokemon(){
-  return(
-<div>
-  <PokemonCard/>
-</div>
-)}
+function App() {
+  return (
+    <div>
+      <MyTitle/>
+<PokemonCard/>   
+ </div>
+  );
+}
+
+
+export default App;

@@ -1,5 +1,6 @@
 import MyTitle from "./MyTitle"
 import PokemonCard from "./PokemonCard";
+
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -14,7 +15,7 @@ function App() {
   return (
     <div>
       <MyTitle/>
-<PokemonCard pokemons = {pokemonList}/>  ;
+<PokemonCard pokemons = {pokemonList[0]}/>  ;
  </div> 
   );
 }

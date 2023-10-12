@@ -1,20 +1,22 @@
-function NavBar({bouton,result,liste}){
-    
-    const handleClickPlus =() => {
-        bouton(result +1);
-      }
-      const handleClickMoins =() => {
-        bouton(result -1);
-      }
+function NavBar({ setPokemonToDisplay, pokemon }) {
 
-      return(
-      <>
-      
-      { result>0 ? <button onClick={handleClickMoins}>Précédent</button> : <button>No index before</button>}
-     {result < liste.length - 1 ? <button onClick={handleClickPlus}>Suivant</button> : <button>End of index</button>} 
-     
-      </>
-      )
+
+  // // const handleClickPlus =() => {
+  // //     setPokemonIndex(pokemonIndex +1);
+  // //   }
+  const handleClick = () => {
+       setPokemonToDisplay(pokemon);
+  }
+
+  return (
+    <>
+    <ul>
+      <li>
+              <button onClick={handleClick} >{pokemon.name}</button>
+      </li>
+    </ul>
+    </>
+  )
 }
 
 export default NavBar;

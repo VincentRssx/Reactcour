@@ -4,9 +4,9 @@ import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
 
 function App() {
-// pokelist
-const pokemonList = [
-  {
+  // pokelist
+  const pokemonList = [
+    {
       name: "bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
@@ -30,21 +30,31 @@ const pokemonList = [
       name: "mew",
     },
   ];
-// 
-// bouton
+  // 
+  // bouton
 
 
-const [pokemonIndex, setPokemonIndex] = useState(0);
-//
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+  const [pokemonToDisplay, setPokemonToDisplay] = useState();
+
+  console.log('ici dans mon app pokemonToDisplay ==>', pokemonToDisplay)
+  //
   return (
 
     <div>
-      <NavBar bouton ={setPokemonIndex} result={pokemonIndex} liste={pokemonList} />
-      <MyTitle/>
-      <PokemonCard pokemons = {pokemonList[pokemonIndex]}/>
- </div> 
+      <MyTitle />
+      
+      {pokemonList.map((pokemon) => (
+        <NavBar key={pokemon.name} pokemon={pokemon} setPokemonToDisplay={setPokemonToDisplay} />
+      ))}
+      {pokemonToDisplay ? (<><p> {pokemonToDisplay.name}</p>
+        <img src={pokemonToDisplay.imgSrc} />      </>) : ''
+      }
+
+      {/* <PokemonCard pokemons = {pokemonList[pokemonIndex]}/> */}
+    </div>
   );
-  
+
 }
 
 
